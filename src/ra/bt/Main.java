@@ -25,17 +25,17 @@ class CircularQueue {
         if (isEmpty()) {
             front = newNode;
             rear = newNode;
-            rear.next = front; // Liên kết lại với chính nó trong trường hợp hàng đợi trống
+            rear.next = front;
         } else {
             rear.next = newNode;
             rear = newNode;
-            rear.next = front; // Cập nhật liên kết vòng
+            rear.next = front;
         }
     }
 
     public Integer deQueue() {
         if (isEmpty()) {
-            return null; // Hàng đợi trống, không thể lấy ra
+            return null;
         } else {
             int value = front.data;
 
@@ -44,7 +44,7 @@ class CircularQueue {
                 rear = null;
             } else {
                 front = front.next;
-                rear.next = front; // Cập nhật liên kết vòng
+                rear.next = front;
             }
 
             return value;
